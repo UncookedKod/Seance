@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: fd4adf3ad1020d64b884aa41c648c11d
+  productGUID: 5a66d4afd8386554c89447c593561b13
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -754,10 +754,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 5075e03d-fff3-40ae-b58a-e39bf2cbb981
+  cloudProjectId: aabdfb38-67db-40d2-89a6-6b03d73e53bd
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: FBLAProjectSeance 2024-11-29_17-49-11
+  projectName: FBLAProjectSeance 2024-11-30_16-20-47
   organizationId: dr4fit
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
