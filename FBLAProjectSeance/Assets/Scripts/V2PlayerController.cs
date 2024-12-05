@@ -2,43 +2,101 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Example : MonoBehaviour
+public class V2PlayerController : MonoBehaviour
 {
-    private CharacterController controller;
-    private Vector3 playerVelocity;
-    private bool groundedPlayer;
-    private float playerSpeed = 2.0f;
-    private float jumpHeight = 1.0f;
-    private float gravityValue = -9.81f;
+    //Get the Rigidbody an order to apply movement
+    //Directions needed an order to apply movement
+    Rigidbody PlayerBody;
+    CapsuleCollider PlayerHitbox;
+    float thrust = 20.0f;
+    float gravity = -14.0f;
+    bool isGround = false;
+    bool isJumping = false;
+    float jumpcount = 0;
+    float jumplimit = 3;
 
-    private void Start()
+    void Start()
     {
-        controller = gameObject.AddComponent<CharacterController>();
+        //Getting Rigidbody and CapsuleCollider
+        PlayerBody = GetComponent<Rigidbody>();
+        PlayerHitbox = GetComponent<CapsuleCollider>();
+        PlayerBody.freezeRotation = true;
     }
 
     void Update()
     {
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
+        #region Directional Values
+        //If its 0 its not supposed to move
+        //Standard Movement will be equal to 1
+        //Any values higher than 1 will be assigned a special value that will be listed
+        float Forward = 5.0f;
+        float Backward = -5.0f;
+        float Left = -5.0f;
+        float Right = 5.0f;
+        #endregion
+        #region Movement Keyboard Inputs
+        if (Input.GetKey(KeyCode.W))
         {
-            playerVelocity.y = 0f;
+            Forward = 5.0f;
+            PlayerBody.AddForce(0, 0, Forward, ForceMode.VelocityChange);
+        }
+        else
+            Forward = 0.0f;
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            Backward = -5.0f;
+            PlayerBody.AddForce(0, 0, Backward, ForceMode.VelocityChange);
+        }
+        else
+            Backward = 0.0f;
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            Left = -5.0f;
+            PlayerBody.AddForce(Left, 0, 0, ForceMode.VelocityChange);
+        }
+        else
+            Left = 0.0f;
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            Right = 5.0f;
+            PlayerBody.AddForce(Right, 0, 0, ForceMode.VelocityChange);
+        }
+        else
+            Right = 0.0f;
+
+        // Jumping Is Different so heres a whole dedicated section for it
+        if (Input.GetKey(KeyCode.Space))
+        {
+            isJumping = true;
+            PlayerBody.AddForce(0,thrust,0, ForceMode.VelocityChange);
+        }
+        else
+        {
+            isJumping = false;
+            //PlayerBody.AddForce(0, gravity, 0, ForceMode.VelocityChange);
         }
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        /*
+        if (isGround == false)
+            PlayerBody.AddForce(0, gravity, 0, ForceMode.VelocityChange);
+        else
+            gravity = 0;
+        */
 
-        if (move != Vector3.zero)
+        //Lazier Code for Shift Sprint
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            gameObject.transform.forward = move;
+            Forward = 10.0f;
         }
-
-        // Makes the player jump
-        if (Input.GetButtonDown("Jump") && groundedPlayer)
+        else
         {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+            Forward = 5.0f;
         }
+        #endregion
 
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+
     }
 }
