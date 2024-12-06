@@ -7,8 +7,11 @@ public class V2PlayerController : MonoBehaviour
     //Get the Rigidbody an order to apply movement
     //Directions needed an order to apply movement
     Rigidbody PlayerBody;
+    CharacterController cont;
     CapsuleCollider PlayerHitbox;
-    float thrust = 20.0f;
+    GameObject PlayerObject;
+    float playerSpeed = 8.0f;
+    float thrust = 5.0f;
     float gravity = -14.0f;
     bool isGround = false;
     bool isJumping = false;
@@ -18,6 +21,10 @@ public class V2PlayerController : MonoBehaviour
     void Start()
     {
         //Getting Rigidbody and CapsuleCollider
+        CharacterController[] tempControllers = GetComponents<CharacterController>();
+        cont = tempControllers[0];
+
+        PlayerObject = GetComponent<GameObject>();
         PlayerBody = GetComponent<Rigidbody>();
         PlayerHitbox = GetComponent<CapsuleCollider>();
         PlayerBody.freezeRotation = true;
@@ -29,49 +36,39 @@ public class V2PlayerController : MonoBehaviour
         //If its 0 its not supposed to move
         //Standard Movement will be equal to 1
         //Any values higher than 1 will be assigned a special value that will be listed
-        float Forward = 5.0f;
-        float Backward = -5.0f;
-        float Left = -5.0f;
-        float Right = 5.0f;
+        int forward = 0;
+        int back = 0;
+        int left = 0;
+        int right = 0;
+        int xIn = 0;
+        int zIn = 0;
         #endregion
         #region Movement Keyboard Inputs
         if (Input.GetKey(KeyCode.W))
-        {
-            Forward = 5.0f;
-            PlayerBody.AddForce(0, 0, Forward, ForceMode.VelocityChange);
-        }
+            forward = 1;
         else
-            Forward = 0.0f;
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            Backward = -5.0f;
-            PlayerBody.AddForce(0, 0, Backward, ForceMode.VelocityChange);
-        }
-        else
-            Backward = 0.0f;
+            forward = 0;
 
         if (Input.GetKey(KeyCode.A))
-        {
-            Left = -5.0f;
-            PlayerBody.AddForce(Left, 0, 0, ForceMode.VelocityChange);
-        }
+            left = 1;
         else
-            Left = 0.0f;
+            left = 0;
+
+        if (Input.GetKey(KeyCode.S))
+            back = 1;
+        else
+            back = 0;
 
         if (Input.GetKey(KeyCode.D))
-        {
-            Right = 5.0f;
-            PlayerBody.AddForce(Right, 0, 0, ForceMode.VelocityChange);
-        }
+            right = 1;
         else
-            Right = 0.0f;
+            right = 0;
 
         // Jumping Is Different so heres a whole dedicated section for it
         if (Input.GetKey(KeyCode.Space))
         {
             isJumping = true;
-            PlayerBody.AddForce(0,thrust,0, ForceMode.VelocityChange);
+            PlayerBody.AddForce(0,thrust,0, ForceMode.Impulse);
         }
         else
         {
@@ -87,16 +84,15 @@ public class V2PlayerController : MonoBehaviour
         */
 
         //Lazier Code for Shift Sprint
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            Forward = 10.0f;
-        }
-        else
-        {
-            Forward = 5.0f;
-        }
         #endregion
 
+        Vector3 forwards = transform.TransformDirection(Vector3.forward);
+        Vector3 rightwards = transform.TransformDirection(Vector3.right);
+        Vector3 leftwards = transform.TransformDirection(Vector3.left);
+        Vector3 backwards = transform.TransformDirection(Vector3.back);
 
+        xIn = right - left;
+        zIn = forward - back;
+        Vector3 move = new Vector3(xIn, 0f, zIn);
     }
 }
