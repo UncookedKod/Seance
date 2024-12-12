@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "H:\\FBLAProject\\Seance\\FBLAProjectSeance\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BE60ABD7-476D-223B-52A1-015CC00200E1}|Assembly-CSharp.csproj|h:\\fblaproject\\seance\\fblaprojectseance\\assets\\scripts\\v2playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE60ABD7-476D-223B-52A1-015CC00200E1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\v2playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE60ABD7-476D-223B-52A1-015CC00200E1}|Assembly-CSharp.csproj|h:\\fblaproject\\seance\\fblaprojectseance\\assets\\scripts\\cameracontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE60ABD7-476D-223B-52A1-015CC00200E1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameracontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE60ABD7-476D-223B-52A1-015CC00200E1}|Assembly-CSharp.csproj|h:\\fblaproject\\seance\\fblaprojectseance\\assets\\scripts\\npctest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE60ABD7-476D-223B-52A1-015CC00200E1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\npctest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE60ABD7-476D-223B-52A1-015CC00200E1}|Assembly-CSharp.csproj|h:\\fblaproject\\seance\\fblaprojectseance\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE60ABD7-476D-223B-52A1-015CC00200E1}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CameraControls.cs",
+              "DocumentMoniker": "H:\\FBLAProject\\Seance\\FBLAProjectSeance\\Assets\\Scripts\\CameraControls.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraControls.cs",
+              "ToolTip": "H:\\FBLAProject\\Seance\\FBLAProjectSeance\\Assets\\Scripts\\CameraControls.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CameraControls.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T23:10:05.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NPCTest.cs",
+              "DocumentMoniker": "H:\\FBLAProject\\Seance\\FBLAProjectSeance\\Assets\\Scripts\\NPCTest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\NPCTest.cs",
+              "ToolTip": "H:\\FBLAProject\\Seance\\FBLAProjectSeance\\Assets\\Scripts\\NPCTest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\NPCTest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T23:10:04.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "H:\\FBLAProject\\Seance\\FBLAProjectSeance\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
+              "ToolTip": "H:\\FBLAProject\\Seance\\FBLAProjectSeance\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T23:10:03.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "V2PlayerController.cs",
+              "DocumentMoniker": "H:\\FBLAProject\\Seance\\FBLAProjectSeance\\Assets\\Scripts\\V2PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\V2PlayerController.cs",
+              "ToolTip": "H:\\FBLAProject\\Seance\\FBLAProjectSeance\\Assets\\Scripts\\V2PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\V2PlayerController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T23:09:56.212Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
