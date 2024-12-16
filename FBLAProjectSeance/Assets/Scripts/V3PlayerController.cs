@@ -35,16 +35,17 @@ public class V3PlayerController : MonoBehaviour
         }
 
         #region Keyboard Inputs
-        if (Input.GetKey("w"))
+        
+        /*if (Input.GetKey("w"))
         {
             PlayerBody.transform.position += (Vector3.forward * Time.deltaTime) * PlayerSpeed;
             print("W!");
-        }
-        if (Input.GetKey("s"))
+        }*/
+        /*if (Input.GetKey("s"))
         {
             PlayerBody.transform.position += (Vector3.back * Time.deltaTime) * PlayerSpeed;
             print("S!");
-        }
+        }*/
         if (Input.GetKey("a"))
         {
             PlayerBody.transform.position += (Vector3.left * Time.deltaTime) * PlayerSpeed;
