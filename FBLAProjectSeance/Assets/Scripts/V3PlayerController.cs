@@ -21,12 +21,9 @@ public class V3PlayerController : MonoBehaviour
 
         PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
-        PlayerMovement();
-        PlayerProperties();
-
     }
     // Update is called once per frame
-    private void PlayerMovement()
+     void Update()
     {
         Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput) * PlayerSpeed;
         PlayerBody.linearVelocity = new Vector3(MoveVector.x, PlayerBody.linearVelocity.y, MoveVector.z);
@@ -61,7 +58,4 @@ public class V3PlayerController : MonoBehaviour
         #endregion
     }
 
-    private void PlayerProperties()
-    {
-    }
 }
