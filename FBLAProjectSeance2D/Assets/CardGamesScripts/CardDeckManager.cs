@@ -1,22 +1,24 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 using JetBrains.Annotations;
-using System;
+
 
 public class CardDeckManager : MonoBehaviour
 {
 
-    [SerializeField] private GameObject Board;
-    [SerializeField] private GameObject YellowCard;
-    [SerializeField] private GameObject RedCard;
-    [SerializeField] private GameObject BlueCard;
-    [SerializeField] private GameObject GreenCard;
+    public GameObject Board;
+    public GameObject YellowCard;
+    public GameObject RedCard;
+    public GameObject BlueCard;
+    public GameObject GreenCard;
     List<GameObject> Cards;
+    List<Vector3> CardSpawnedPositions;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Instantiate(Board, Vector3.zero, Quaternion.identity);
         CardSetup();
         SpawnSetUp();
     }
@@ -28,16 +30,25 @@ public class CardDeckManager : MonoBehaviour
         Cards[1] = RedCard;
         Cards[2] = BlueCard;
         Cards[3] = GreenCard;
+        CardSpawnedPositions[0] = new Vector3(-4,1,0);
+        CardSpawnedPositions[1] = new Vector3(-1,1,0);
+        CardSpawnedPositions[2] = new Vector3(1, 1, 0);
+        CardSpawnedPositions[3] = new Vector3(4, 1, 0);
+        CardSpawnedPositions[4] = new Vector3(-4, -1, 0);
+        CardSpawnedPositions[5] = new Vector3(-1, -1, 0);
+        CardSpawnedPositions[6] = new Vector3(1, -1, 0);
+        CardSpawnedPositions[7] = new Vector3(4, -1, 0);
     }
 
     void SpawnSetUp()
-    {
-        Vector3 origin = Vector3.zero;
-        Instantiate(Board, Vector3.zero,Quaternion.identity);
+    { 
 
         for (int i = 0; i < 4; i++)
         {
-            Instantiate(Cards[0], new Vector3(), Quaternion.identity);
+            int RandomPos1 = Random.Range(0, 8);
+            Instantiate(Cards[0], CardSpawnedPositions[RandomPos1], Quaternion.identity);
+            int RandomPos2 = Random.Range(0, 8);
+            Instantiate(Cards[0], CardSpawnedPositions[RandomPos2], Quaternion.identity);
         }
     }
 
